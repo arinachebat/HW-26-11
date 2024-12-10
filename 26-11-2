@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+//задача 76//
+int main() {
+ setlocale(LC_ALL, "Russian");
+ int k, l, m, n;
+ cout << "Введите координаты первого поля (k, l): ";
+ cin >> k >> l;
+ cout << "Введите координаты второго поля (m, n): ";
+ cin >> m >> n;
+ if (k < 1  || k > 8 || l < 1 || l > 8 || m < 1 || m > 8 || n < 1 || n > 8) {
+  cout << "Ошибка: координаты должны быть от 1 до 8. ";
+  return 1;
+ }
+ bool color = ((k + l) % 2 == (m + n) % 2);
+
+ if (color) {
+  cout << "Поля (" << k << "," << l << ") b (" << m << "," << n << ") одного цвета. " << endl;
+ }
+ else {
+  cout << "Поля (" << k << "," << l << ") b (" << m << "," << n << ") разного цвета. " << endl;
+ }
+ return 0;
+}
